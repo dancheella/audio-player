@@ -1,0 +1,84 @@
+import playList from "./playList.js";
+
+const audio = document.getElementById('audio-track');
+const playPauseButton = document.getElementById('playPause');
+const nextButton = document.getElementById('next');
+const prevButton = document.getElementById('prev');
+const progressBar = document.getElementById('progressBar');
+const currentTimeDisplay = document.getElementById('currentTime');
+const durationDisplay = document.getElementById('duration');
+const coverImage = document.getElementById('cover');
+const titleDisplay = document.getElementById('title');
+const artistDisplay = document.getElementById('artist');
+const body = document.querySelector('body');
+
+let currentTrackIndex = 0;
+
+function loadTrack(trackIndex) {
+  const track = playList[trackIndex];
+  audio.src = track.src;
+  coverImage.src = track.cover;
+  titleDisplay.textContent = track.title;
+  artistDisplay.textContent = track.artist;
+  durationDisplay.textContent = track.duration;
+  body.style.backgroundImage = `url('${track.cover}')`;
+}
+
+loadTrack(currentTrackIndex);
+
+function playPause() {
+  if (audio.paused) {
+    audio.play();
+    playPauseButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+        <path fill="#C1FF008F" d="M32 0c-17.673 0-32 14.327-32 32s14.327 32 32 32 32-14.327 32-32-14.327-32-32-32zM32 58c-14.359 0-26-11.641-26-26s11.641-26 26-26 26 11.641 26 26-11.641 26-26 26zM20 20h8v24h-8zM36 20h8v24h-8z"></path>
+       </svg>`;
+  } else {
+    audio.pause();
+    playPauseButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+        <path fill="#C1FF008F" d="M32 0c-17.673 0-32 14.327-32 32s14.327 32 32 32 32-14.327 32-32-14.327-32-32-32zM32 58c-14.359 0-26-11.641-26-26s11.641-26 26-26 26 11.641 26 26-11.641 26-26 26zM24 18l24 14-24 14z"></path>
+      </svg>`;
+  }
+}
+
+function nextTrack() {
+  currentTrackIndex = (currentTrackIndex + 1) % playList.length;
+  loadTrack(currentTrackIndex);
+  playPause();
+}
+
+function prevTrack() {
+  currentTrackIndex = (currentTrackIndex - 1 + playList.length) % playList.length;
+  loadTrack(currentTrackIndex);
+  playPause();
+}
+
+playPauseButton.addEventListener('click', playPause);
+nextButton.addEventListener('click', nextTrack);
+prevButton.addEventListener('click', prevTrack);
+
+audio.addEventListener('timeupdate', () => {
+  const currentTime = audio.currentTime;
+  const duration = audio.duration;
+  currentTimeDisplay.textContent = formatTime(currentTime);
+  if (!audio.paused && duration > 0) {
+    progressBar.value = (currentTime / duration) * 100;
+  }
+});
+
+audio.addEventListener('ended', nextTrack);
+
+function formatTime(time) {
+  const minutes = Math.floor(time / 60);
+  const seconds = Math.floor(time % 60);
+  return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+}
+
+progressBar.addEventListener('input', () => {
+  const duration = audio.duration;
+  audio.currentTime = (progressBar.value / 100) * duration;
+});
+
+// Year
+const currentYear = new Date().getFullYear();
+const yearElement = document.querySelector('.footer__year');
+yearElement.textContent = currentYear.toString();

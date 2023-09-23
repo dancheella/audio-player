@@ -64,6 +64,10 @@ body {
 }
 
 .audio__info-artist {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+
   font-size: 34px;
   filter: drop-shadow(2px 2px 2px #ce1919);
 }
