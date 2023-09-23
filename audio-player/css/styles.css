@@ -84,6 +84,7 @@ body {
 .controls__next {
   background-color: transparent;
   border: none;
+  filter: drop-shadow(5px 5px 10px rgb(0, 0, 0));
 }
 
 .controls__prev:hover,
@@ -103,6 +104,18 @@ body {
 .controls__play:active path,
 .controls__next:active path {
   fill: #fcfcfc;
+}
+
+.controls__container-button {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  filter: drop-shadow(0 0 2px rgba(193, 255, 0, 0.7));
+}
+
+.controls__container-button:hover {
+  transform: scale(1.2);
+  transition: all 0.3s linear;
 }
 
 .progress {
@@ -147,7 +160,6 @@ body {
   max-height: 5px;
   border-radius: 30px;
   background: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.35), rgba(193, 255, 0, 0.68));
-
 }
 
 .footer {

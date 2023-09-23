@@ -11,6 +11,9 @@ const coverImage = document.getElementById('cover');
 const titleDisplay = document.getElementById('title');
 const artistDisplay = document.getElementById('artist');
 const body = document.querySelector('body');
+const volume = document.getElementById('volume');
+const soundButton = document.getElementById('sound-button');
+
 
 let currentTrackIndex = 0;
 
@@ -63,6 +66,7 @@ audio.addEventListener('timeupdate', () => {
   if (!audio.paused && duration > 0) {
     progressBar.value = (currentTime / duration) * 100;
   }
+  audio.volume = volume.value;
 });
 
 audio.addEventListener('ended', nextTrack);
@@ -82,3 +86,15 @@ progressBar.addEventListener('input', () => {
 const currentYear = new Date().getFullYear();
 const yearElement = document.querySelector('.footer__year');
 yearElement.textContent = currentYear.toString();
+
+
+function toggleMute() {
+  if (audio.muted) {
+    audio.muted = false;
+    soundButton.src = 'assets/images/volume/volume.png';
+  } else {
+    audio.muted = true;
+    soundButton.src = 'assets/images/volume/volume-close.png';
+  }
+}
+soundButton.addEventListener('click', toggleMute);
