@@ -10,45 +10,49 @@
 </head>
 <body>
 
-<div class="audio-player">
-  <div class="audio-info">
-    <img id="cover" src="" alt="Album Cover">
-    <div id="title"></div>
-    <div id="artist"></div>
-  </div>
-  <audio id="audio"></audio>
-  <div class="controls">
-    <button id="prev">
-      <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
-        <path fill="#fff"
-              d="M32 64c17.673 0 32-14.327 32-32s-14.327-32-32-32-32 14.327-32 32 14.327 32 32 32zM32 6c14.359 0 26 11.641 26 26s-11.641 26-26 26-26-11.641-26-26 11.641-26 26-26zM44 42l-14-10 14-10zM28 42l-14-10 14-10z"></path>
-      </svg>
-    </button>
-    <button id="playPause">
-      <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
-        <path fill="#fff"
-              d="M32 0c-17.673 0-32 14.327-32 32s14.327 32 32 32 32-14.327 32-32-14.327-32-32-32zM32 58c-14.359 0-26-11.641-26-26s11.641-26 26-26 26 11.641 26 26-11.641 26-26 26zM24 18l24 14-24 14z"></path>
-      </svg>
-    </button>
-    <button id="next">
-      <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
-        <path fill="#fff"
-              d="M32 0c-17.673 0-32 14.327-32 32s14.327 32 32 32 32-14.327 32-32-14.327-32-32-32zM32 58c-14.359 0-26-11.641-26-26s11.641-26 26-26 26 11.641 26 26-11.641 26-26 26zM20 22l14 10-14 10zM36 22l14 10-14 10z"></path>
-      </svg>
-    </button>
-  </div>
-  <div class="progress">
-    <div id="currentTime">0:00</div>
-    <input id="progressBar" type="range" value="0" min="0" max="100">
-    <div id="duration">0:00</div>
-  </div>
-</div>
+<main class="audio">
+  <section class="audio__player">
+    <div class="audio__info">
+      <img id="cover" class="audio__info-cover" src="" alt="Album Cover">
+      <div id="title" class="audio__info-title"></div>
+      <div id="artist" class="audio__info-artist"></div>
+    </div>
+    <audio id="audio-track"></audio>
+    <div class="audio__controls">
+      <button id="prev" class="controls__prev">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+          <path fill="#C1FF008F"
+                d="M32 64c17.673 0 32-14.327 32-32s-14.327-32-32-32-32 14.327-32 32 14.327 32 32 32zM32 6c14.359 0 26 11.641 26 26s-11.641 26-26 26-26-11.641-26-26 11.641-26 26-26zM44 42l-14-10 14-10zM28 42l-14-10 14-10z"></path>
+        </svg>
+      </button>
+      <button id="playPause" class="controls__play">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+          <path fill="#C1FF008F"
+                d="M32 0c-17.673 0-32 14.327-32 32s14.327 32 32 32 32-14.327 32-32-14.327-32-32-32zM32 58c-14.359 0-26-11.641-26-26s11.641-26 26-26 26 11.641 26 26-11.641 26-26 26zM24 18l24 14-24 14z"></path>
+        </svg>
+      </button>
+      <button id="next" class="controls__next">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+          <path fill="#C1FF008F"
+                d="M32 0c-17.673 0-32 14.327-32 32s14.327 32 32 32 32-14.327 32-32-14.327-32-32-32zM32 58c-14.359 0-26-11.641-26-26s11.641-26 26-26 26 11.641 26 26-11.641 26-26 26zM20 22l14 10-14 10zM36 22l14 10-14 10z"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="progress">
+      <div id="currentTime" class="progress__start">0:00</div>
+      <input id="progressBar" type="range" value="0" min="0" max="100" class="progress__bar">
+      <div id="duration" class="progress__finish">0:00</div>
+    </div>
+  </section>
+</main>
 
-<footer>
-  <a href="https://github.com/dancheella" target="_blank"><img src="assets/svg/github.svg" alt="GitHub"></a>
-  <span class="current-year"></span>
-  <a href="https://yourcourse.com" target="_blank"><img src="assets/svg/rss.svg" alt="RSS"></a>
+<footer class="footer">
+  <a href="https://github.com/dancheella" target="_blank" class="footer__github"><img src="assets/svg/github.svg"
+                                                                                      alt="GitHub"></a>
+  <span class="footer__year"></span>
+  <a href="https://yourcourse.com" target="_blank" class="footer__rss"><img src="assets/svg/rss.svg" alt="RSS"></a>
 </footer>
+
 
 <script src="js/scripts.js"></script>
 </body>

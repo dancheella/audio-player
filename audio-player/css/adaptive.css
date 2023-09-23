@@ -1,0 +1,24 @@
+@media screen and (max-width: 768px) {
+  .footer__github img {
+    width: 40px;
+    height: 38px;
+  }
+
+  .footer__year {
+    font-size: 20px;
+  }
+
+  .footer__rss img {
+    width: 90px;
+    height: 48px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .controls__prev svg,
+  .controls__play svg,
+  .controls__next svg {
+    width: 50px;
+    height: 50px;
+  }
+}

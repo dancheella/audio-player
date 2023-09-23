@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: 'Philosopher';
+  src: url("../assets/fonts/Philosopher-Regular.ttf");
+}
+
+body {
+  font-family: 'Philosopher', sans-serif;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(10px);
+}
+
+.audio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 30px;
+}
+
+.audio__player {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 100%;
+  background: linear-gradient(15deg, rgb(107, 106, 106) 0%, rgb(107, 79, 30) 100%);
+  border-radius: 5%;
+  border: 1px solid black;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 0 20px rgb(0, 0, 0);
+}
+
+.audio__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: white;
+}
+
+.audio__info-cover {
+  max-width: 100%;
+  border-radius: 5%;
+  box-shadow: 0 0 20px rgba(193, 255, 0, 0.4);
+}
+
+.audio__info-title {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 24px;
+  filter: drop-shadow(2px 2px 2px #ce1919);
+  text-align: center;
+}
+
+.audio__info-artist {
+  font-size: 34px;
+  filter: drop-shadow(2px 2px 2px #ce1919);
+}
+
+.audio__controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.controls__prev,
+.controls__play,
+.controls__next {
+  background-color: transparent;
+  border: none;
+}
+
+.controls__prev:hover,
+.controls__play:hover,
+.controls__next:hover {
+  transform: scale(1.2);
+  transition: all 0.3s linear;
+}
+
+.controls__prev:hover path,
+.controls__play:hover path,
+.controls__next:hover path {
+  fill: black;
+}
+
+.controls__prev:active path,
+.controls__play:active path,
+.controls__next:active path {
+  fill: #fcfcfc;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.progress__start,
+.progress__finish {
+  font-size: 20px;
+  color: white;
+  filter: drop-shadow(2px 2px 2px #c1ff00);
+}
+
+.progress__bar {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 7px;
+  background: black;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.progress__bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  margin-top: -7px;
+  margin-left: 0;
+  height: 20px;
+  width: 7px;
+  border: 0;
+  background: -webkit-linear-gradient(45deg, rgb(0, 0, 0), rgb(193, 255, 0));
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.progress__bar::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  max-height: 5px;
+  border-radius: 30px;
+  background: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.35), rgba(193, 255, 0, 0.68));
+
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 100%;
+}
+
+.footer__github img {
+  width: 70px;
+  height: 68px;
+}
+
+.footer__year {
+  font-size: 30px;
+}
+
+.footer__rss img {
+  width: 150px;
+  height: 68px;
+}
