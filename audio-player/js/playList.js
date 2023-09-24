@@ -87,7 +87,7 @@ const playList = [
     title: '5 Thousand Singles',
     artist: 'SAINt JHN',
     src: '../audio-player/assets/sounds/5 Thousand Singles.mp3',
-    duration: '4:13',
+    duration: '2:46',
     cover: '../audio-player/assets/images/music/jhn.jpeg'
   },
 ]

@@ -142,6 +142,22 @@ body {
   border-radius: 20px;
   max-height: 400px;
   overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.playlist-container::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.playlist-container::-webkit-scrollbar-track {
+  border-radius: 15px;
+  background:linear-gradient(95deg, rgb(130, 155, 60) 0%, rgb(72, 53, 33) 100%);
+}
+
+.playlist-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(15deg, rgb(136, 189, 94) 0%, rgb(255, 204, 0) 100%);
+  border-radius: 10px;
 }
 
 .song {

@@ -68,7 +68,9 @@ audio.addEventListener('timeupdate', () => {
   if (!audio.paused && duration > 0) {
     progressBar.value = (currentTime / duration) * 100;
   }
-  audio.volume = volume.value;
+  volume.addEventListener('input', () => {
+    audio.volume = volume.value;
+  });
 });
 
 audio.addEventListener('ended', nextTrack);
