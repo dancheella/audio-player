@@ -62,6 +62,34 @@ const playList = [
     duration: '2:43',
     cover: '../audio-player/assets/images/music/shine.jpeg'
   },
+  {
+    title: 'Dark Horse (Hardstyle) x Loud Version',
+    artist: 'Nihilus',
+    src: '../audio-player/assets/sounds/Dark Horse (Hardstyle) We Go Gym x Loud Version.mp3',
+    duration: '2:07',
+    cover: '../audio-player/assets/images/music/dark.jpeg'
+  },
+  {
+    title: 'Mne malo malo tebya (remix)',
+    artist: 'Serebro',
+    src: '../audio-player/assets/sounds/serebro remix - mne malo malo malo tebya.mp3',
+    duration: '2:44',
+    cover: '../audio-player/assets/images/music/malo.jpeg'
+  },
+  {
+    title: 'Бедолага',
+    artist: 'T-Fest',
+    src: '../audio-player/assets/sounds/Бедолага.mp3',
+    duration: '4:13',
+    cover: '../audio-player/assets/images/music/fest.jpeg'
+  },
+  {
+    title: '5 Thousand Singles',
+    artist: 'SAINt JHN',
+    src: '../audio-player/assets/sounds/5 Thousand Singles.mp3',
+    duration: '4:13',
+    cover: '../audio-player/assets/images/music/jhn.jpeg'
+  },
 ]
 
 export default playList;
