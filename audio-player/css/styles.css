@@ -84,7 +84,7 @@ body {
 .controls__next {
   background-color: transparent;
   border: none;
-  filter: drop-shadow(5px 5px 10px rgb(0, 0, 0));
+  filter: drop-shadow(3px 3px 3px rgb(0, 0, 0));
 }
 
 .controls__prev:hover,
