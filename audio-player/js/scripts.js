@@ -83,7 +83,7 @@ function formatTime(time) {
 }
 
 progressBar.addEventListener('input', () => {
-  const duration = audio.duration; // длинна медеа
+  const duration = audio.duration; // длинна медиа
   audio.currentTime = (progressBar.value / 100) * duration;
 });
 
