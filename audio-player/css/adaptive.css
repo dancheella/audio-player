@@ -1,0 +1,71 @@
+@media screen and (max-width: 768px) {
+  .controls__prev svg,
+  .controls__play svg,
+  .controls__next svg {
+    width: 50px;
+    height: 50px;
+  }
+
+  .footer__github img {
+    width: 40px;
+    height: 38px;
+  }
+
+  .footer__year {
+    font-size: 20px;
+  }
+
+  .footer__rss img {
+    width: 90px;
+    height: 48px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .audio__controls {
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .audio__controls {
+    gap: 10px;
+  }
+
+  .controls__prev svg,
+  .controls__play svg,
+  .controls__next svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .controls__container-list,
+  .controls__container-button {
+    width: 26px;
+    height: 26px;
+  }
+
+  .audio__info-title {
+    font-size: 18px;
+  }
+
+  .audio__info-artist {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .controls__prev svg,
+  .controls__play svg,
+  .controls__next svg {
+    width:30px;
+    height: 30px;
+  }
+
+  .controls__container-list,
+  .controls__container-button,
+  .controls__list-sound{
+    width: 20px;
+    height: 20px;
+  }
+}
